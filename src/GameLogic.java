@@ -209,7 +209,7 @@ public class GameLogic extends JPanel
 			gameBoard[current.x + 1][current.y + 1] = true;
 		}
 		ArrayList<Point> survivingCells = new ArrayList<Point>(0);
-		// Iterate through the array, follow game of life rules
+		// Reglas
 		for (int x = 1; x < gameBoard.length - 1; x++) {
 			for (int y = 1; y < gameBoard[0].length - 1; y++) {
 				int surrounding = 0;
@@ -238,12 +238,12 @@ public class GameLogic extends JPanel
 					surrounding++;
 				}
 				if (gameBoard[x][y]) {
-					// Cell is alive, Can the cell live? (2-3)
+
 					if ((surrounding == 2) || (surrounding == 3)) {
 						survivingCells.add(new Point(x - 1, y - 1));
 					}
 				} else {
-					// Cell is dead, will the cell be given birth? (3)
+
 					if (surrounding == 3) {
 						survivingCells.add(new Point(x - 1, y - 1));
 					}
@@ -259,6 +259,7 @@ public class GameLogic extends JPanel
 			if (fps == 0) {
 				fps = 1;
 			}
+			//Velocidad
 			Thread.sleep(1000 / fps);
 			run();
 		} catch (InterruptedException ex) {
@@ -397,6 +398,7 @@ public class GameLogic extends JPanel
 		repaint();
 	}
 
+	//	Step button
 	public void step() {
 		boolean[][] gameBoard = new boolean[d_gameBoardSize.width + 2][d_gameBoardSize.height + 2];
 		for (Point current : point) {

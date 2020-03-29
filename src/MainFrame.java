@@ -106,6 +106,7 @@ public class MainFrame extends JFrame {
 			}
 		});
 
+		// Slider
 		toolbar.framesPerSecond.addChangeListener(new ChangeListener() {
 
 			@Override
@@ -115,6 +116,7 @@ public class MainFrame extends JFrame {
 			}
 		});
 
+		// ComboBox
 		toolbar.presetsComboBox.addItemListener(new ItemListener() {
 
 			@Override
@@ -144,6 +146,7 @@ public class MainFrame extends JFrame {
 			}
 		});
 
+		// Info button
 		toolbar.infoBtn.addActionListener(new ActionListener() {
 
 			@Override
@@ -157,6 +160,7 @@ public class MainFrame extends JFrame {
 			}
 		});
 
+		// Step Button
 		toolbar.nextStep.addActionListener(new ActionListener() {
 
 			@Override
@@ -168,7 +172,7 @@ public class MainFrame extends JFrame {
 
 	}
 
-	public void setGameBeingPlayed(boolean isBeingPlayed) { // COMPROBAR SI ESTA
+	public void setGameBeingPlayed(boolean isBeingPlayed) { // COMPROBAR SI ESTA SIENDO EJECUTADO
 		if (isBeingPlayed) {
 
 			game = new Thread(gameLogic);
